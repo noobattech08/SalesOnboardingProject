@@ -1,0 +1,755 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AccountInformationUpdate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Trigger.Bundle;assembly=C7266A122C9_curated_.YMZjK1LSEsK1qnoca24UUkC1" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Update.Bundle;assembly=C7266A122C9_curated_.hYSMg4P6sVR12mBUo29cEXS3" xmlns:uiascb2="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_opportunity_Create.Bundle;assembly=C7266A122C9_curated_.bAUdD2df5uQ1SK4el1PSzGc2" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="AccntName" Type="InArgument(x:String)" />
+    <x:Property Name="AccntType" Type="InArgument(x:String)" />
+    <x:Property Name="AccntID" Type="InArgument(uiascb:curated_account_Trigger)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1009,5155</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AccountInformationUpdate_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Trigger.Bundle</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>C7266A122C9_curated_.bAUdD2df5uQ1SK4el1PSzGc2</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.hYSMg4P6sVR12mBUo29cEXS3</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.YMZjK1LSEsK1qnoca24UUkC1</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AccountInformationUpdate" sap:VirtualizedContainerService.HintSize="612,5090" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="AccountProduct" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Dt_AccountInfo" />
+      <Variable x:TypeArguments="x:String" Name="OppValue" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="550,126" sap2010:WorkflowViewState.IdRef="Comment_12" Text="For bulk user accounts update we can use the below workflow that has been commented out." />
+    <ui:CommentOut DisplayName="Update User Account Details Bulk Commented Out" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="654,1700" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Update User Account Details Bulk" sap:VirtualizedContainerService.HintSize="592,1615" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="Comment_8" Text="After gathering the information from Product application, store the required data in an excel sheet along with the product information for bulk data processing. Read the data line by line from excel sheet and write it to the required  account fields." />
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Mention the workbook name where the fields are stored." DataTable="[Dt_AccountInfo]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="530,162" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="UserAccountData.xlsx">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ReadRange>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Dt_AccountInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,1159" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,972" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[AccntName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow("AccountName").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[AccntType]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow("AccountType").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:Comment sap:VirtualizedContainerService.HintSize="434,126" sap2010:WorkflowViewState.IdRef="Comment_9" Text="Add the required fields that are needed to be updated. Here are only a few fields for example purpose." />
+                    <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="Add/Update the required fields in the account details section. Add the required fields as per the account properties and input into the required fields from properties tab." Configuration="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" ConnectionId="84575e57-3183-428a-a4a5-0c7266a122c9" DisplayName="Update Account" sap:VirtualizedContainerService.HintSize="434,533" sap2010:WorkflowViewState.IdRef="ConnectorActivity_5" UiPathActivityTypeId="f00f6455-da96-35e2-a569-dc4f3f1f892b">
+                      <isactr:ConnectorActivity.FieldObjects>
+                        <isactr:FieldObject Name="curated_accountId" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">001dL000004EnzSQAS</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Jit_curated_account" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <OutArgument x:TypeArguments="uiascb1:curated_account_Update" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Name" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">[AccntName]</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="OwnerId" Type="FieldArgument" />
+                        <isactr:FieldObject Name="AccountSource" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Type" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String">[AccntType]</InArgument>
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Ownership" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Website" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Phone" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="BillingStreet" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="BillingCity" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="BillingPostalCode" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="BillingCountry" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Description" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Industry" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="AccountNumber" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                        <isactr:FieldObject Name="Active__c" Type="FieldArgument" />
+                        <isactr:FieldObject Name="SLAExpirationDate__c" Type="FieldArgument" />
+                        <isactr:FieldObject Name="YearStarted" Type="FieldArgument">
+                          <isactr:FieldObject.Value>
+                            <InArgument x:TypeArguments="x:String" />
+                          </isactr:FieldObject.Value>
+                        </isactr:FieldObject>
+                      </isactr:ConnectorActivity.FieldObjects>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </isactr:ConnectorActivity>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="550,107" sap2010:WorkflowViewState.IdRef="Comment_13" Text="For single user account update we can use the below workflow." />
+    <TryCatch DisplayName="Try Catch Update User Account Single" sap:VirtualizedContainerService.HintSize="550,878" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Update User Account Details Single" sap:VirtualizedContainerService.HintSize="416,618" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="Add/Update the required fields in the account details section. Add the required fields as per the account properties and input into the required fields from properties tab." Configuration="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" ConnectionId="84575e57-3183-428a-a4a5-0c7266a122c9" DisplayName="Update Account" sap:VirtualizedContainerService.HintSize="354,533" sap2010:WorkflowViewState.IdRef="ConnectorActivity_7" UiPathActivityTypeId="f00f6455-da96-35e2-a569-dc4f3f1f892b">
+            <isactr:ConnectorActivity.FieldObjects>
+              <isactr:FieldObject Name="curated_accountId" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[AccntID.Name.ToString + "-" + AccntID.Id.ToString]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Jit_curated_account" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="uiascb1:curated_account_Update" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Name" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[AccntName]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="OwnerId" Type="FieldArgument" />
+              <isactr:FieldObject Name="AccountSource" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Type" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[AccntType]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Ownership" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Website" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Phone" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="BillingStreet" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="BillingCity" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="BillingPostalCode" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="BillingCountry" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Description" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Industry" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="AccountNumber" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Active__c" Type="FieldArgument" />
+              <isactr:FieldObject Name="SLAExpirationDate__c" Type="FieldArgument" />
+              <isactr:FieldObject Name="YearStarted" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+            </isactr:ConnectorActivity.FieldObjects>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </isactr:ConnectorActivity>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Failed to update the user account due to &quot; + exception.Message.ToString + &quot; at source &quot; + exception.Source]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <Sequence DisplayName="CreateOpportunityForProduct" sap:VirtualizedContainerService.HintSize="550,3834" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="488,88" sap2010:WorkflowViewState.IdRef="Comment_3" Text="After logging into Salesforce." />
+      <TryCatch DisplayName="Try Catch CreateOpportunityForProduct Capture" sap:VirtualizedContainerService.HintSize="488,2247" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch.Try>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Home | Salesforce" sap:VirtualizedContainerService.HintSize="450,1987" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="fbae9427-355a-49f5-b17a-42060e8efcae" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Extract The Opportunity Value For Account" sap:VirtualizedContainerService.HintSize="416,1770" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Accounts'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fbae9427-355a-49f5-b17a-42060e8efcae" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://self-e9-dev-ed.develop.lightning.force.com/lightning/page/home" CVScreenId="5246b83b-7ed8-47c7-a58f-7062ccf88812" CvTextArea="295, 194, 55, 12" CvTextArgument="Accounts" CvType="Text" DesignTimeRectangle="297, 190, 53, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/oneAppNavContainer:appnav/auraIf/oneAppnav:oneAppNav' tag='ONE-APPNAV' /&gt;&lt;webctrl aaname='Accounts' class='slds-truncate' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/oneAppNavContainer:appnav/auraIf/oneAppnav:oneAppNav' tag='ONE-APPNAV' /&gt;&lt;webctrl aaname='Accounts' class='slds-truncate' tag='SPAN' type='' check:innerText='Accounts' /&gt;" Guid="1b8489e4-29a6-4e69-ae61-8bad634bca0e" InformativeScreenshot="9bf9f0490cba2e0f8bd3057e064c0b01.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="5246b83b-7ed8-47c7-a58f-7062ccf88812" CvTextArea="295, 194, 55, 12" CvTextArgument="Accounts" CvType="Text" DesignTimeRectangle="285, 181, 77, 37" ElementType="Text" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/oneAppNavContainer:appnav/auraIf/oneAppnav:oneAppNav' tag='ONE-APPNAV' /&gt;&lt;webctrl aaname='Accounts' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/oneAppNavContainer:appnav/auraIf/oneAppnav:oneAppNav' tag='ONE-APPNAV' /&gt;&lt;webctrl aaname='Accounts' tag='A' type='' class='slds-context-bar__label-action dndItem' check:innerText='Accounts' /&gt;" Guid="0fe23fda-61f4-408e-92b1-3808d930c7a9" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <ui:Comment sap:VirtualizedContainerService.HintSize="354,183" sap2010:WorkflowViewState.IdRef="Comment_7" Text="Whenever searching with Account Name, Account Phone Number or any such attributes, make sure that the field is absolutely unique, or else the object cloning feature will fail.&#xA;This can be achieved by filtering the data before proceeding with the search." />
+                  <uix:NSetText DisplayName="Search Account Name" sap:VirtualizedContainerService.HintSize="354,194" sap2010:WorkflowViewState.IdRef="NSetText_2" ScopeIdentifier="fbae9427-355a-49f5-b17a-42060e8efcae" Text="[AccntID.Name.ToString]" Version="V3">
+                    <uix:NSetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://self-e9-dev-ed.develop.lightning.force.com/lightning/o/Account/list?filterName=Recent" CVScreenId="735b0df0-a794-4eea-917a-e70c436fb153" CvTextArea="1412, 298, 92, 13" CvTextArgument="Search this list..." CvType="Text" DesignTimeRectangle="1380, 289, 240, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerSearchBar:searchBar' tag='FORCE-LIST-VIEW-MANAGER-SEARCH-BAR' /&gt;&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerSearchBar:searchBar' tag='FORCE-LIST-VIEW-MANAGER-SEARCH-BAR' /&gt;&lt;webctrl tag='INPUT' type='search' class='slds-input' placeholder='Search this list...' aaname='Search this list...' /&gt;" Guid="827fdc21-8a6a-483c-afe1-f9d16d7f7eaa" InformativeScreenshot="ec99724948594526811b965eefc307fd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Recently Viewed | Accounts | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="735b0df0-a794-4eea-917a-e70c436fb153" CvElementArea="1389, 295, 19, 20" CvType="Icon" DesignTimeRectangle="1387, 293, 23, 24" ElementType="Icon" Guid="f3f372bb-0e04-4b05-91a0-6fb820ef4e2b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADFSURBVEhL7ZLrDcMgDAY7NCswAyswAyuwAjOwAtVFcUVV21SiUf/kJAsFlPvM4zEu5Jar/F9eax2llGPsvZ+za1x5a22EED6KoG9CTPkslo6ZSym9AlaYcgQxxvPrnZzzsb7qXpVL11Z3SFknxEOVcwz8TIgFu+KIPFw5o4W3M8E8czqjtHNFuiUXAVufA2TeCp4x5YAICbK5ZI51L8CVA5eKhJdByT3Ic/QClnKPVcCWHCRAe1nbcrCe7E/kFrdc5UL5GE/fEkM9axpPtAAAAABJRU5ErkJggg==" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSetText.Target>
+                  </uix:NSetText>
+                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Refresh" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fbae9427-355a-49f5-b17a-42060e8efcae" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://self-e9-dev-ed.develop.lightning.force.com/lightning/o/Account/list?filterName=Recent" CVScreenId="37ba43ae-e4b7-42d8-a206-34eee100f77f" CvElementArea="1718, 287, 36, 36" CvType="Button" DesignTimeRectangle="1730, 300, 12, 12" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerButtonBar' tag='FORCE-LIST-VIEW-MANAGER-BUTTON-BAR' /&gt;&lt;webctrl tag='path' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerButtonBar' tag='FORCE-LIST-VIEW-MANAGER-BUTTON-BAR' /&gt;&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="a52ba997-eb26-4b35-abf1-54f6ec05704f" InformativeScreenshot="03cd90bbbe9f0f523d64abf329e72563.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Recently Viewed | Accounts | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="c7975652-815d-4fb0-a269-f38659961cf6" CvElementArea="1718, 287, 36, 36" CvType="Button" DesignTimeRectangle="1720, 289, 32, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerButtonBar' tag='FORCE-LIST-VIEW-MANAGER-BUTTON-BAR' /&gt;&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/auraIf/auraIf/auraIf/forceListViewManagerHeader:header/forceListViewManagerButtonBar' tag='FORCE-LIST-VIEW-MANAGER-BUTTON-BAR' /&gt;&lt;webctrl tag='BUTTON' type='button' class='slds-button slds-button_icon slds-button_icon-border-filled' aaname='Refresh' /&gt;" Guid="00faaf31-043e-48d1-b1fb-b1aa365ce257" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF+SURBVFhH7Zi9ToRAFIV9KV/DN7C3NdBQ2vgIFhs6e2Nib2FCpbWGB9AGwm9Dd81H9m4GFvnZYZGCk5zMwkz2fNw7U8BFWZYyxUVRSJ7nkmWZJEkicRxLFEW1+c095ljD2q7/6PNkIEyQCZamaW0T5BQY3AAKw1B83xfP88R13dF2HKd219xfJoMsMk2GAxATLAqCQKqqknOLDLLINKEOQNCyYGmRSfYREKRLVKYtMsk+AqKv/yWyN6A+bUBD2oCGNDvQy9uXfHx+y09U7O+I3O1e5eb+eX/Vr1mAACDw8vqh4d3Tew2mc2NkDURFTACuGRWC8er2cRkgnp4gArsEmMIuAqSBtMwUewZIrcxiQNqOtrRlpoEcIysgYAibU1ZAPDWtMI+4rayAdA8xziUrIKQbl+NuiqpRwanVswYiUKF0A5unq30Ch2QNpNKTpRv9lOqg2YDm0gY0pA1oSJ1Aq3tRXN2r9Oo+NigUtCyir+c0GWSZMLgBtAavDKiUX/AM3rPuoaXFAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Account Name" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fbae9427-355a-49f5-b17a-42060e8efcae" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://self-e9-dev-ed.develop.lightning.force.com/lightning/o/Account/list?filterName=Recent" CVScreenId="8509cb93-8b5c-423a-8706-9fc6601cb0bd" CvTextArea="123, 376, 81, 15" CvTextArgument="TempAccount" CvType="Text" DesignTimeRectangle="125, 372, 78, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='slds-truncate outputLookupLink slds-truncate outputLookupLink-001dL000004BZpnQAG-11709:0 forceOutputLookup' aaname='TempAccount' /&gt;" Guid="c56da64d-cddf-472c-8d37-d002db2a7748" InformativeScreenshot="0d89a3ae497e549ead7c1f2c872c7e02.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Recently Viewed | Accounts | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="8509cb93-8b5c-423a-8706-9fc6601cb0bd" CvTextArea="123, 376, 81, 15" CvTextArgument="TempAccount" CvType="Text" DesignTimeRectangle="125, 372, 525, 20" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/forceListViewManagerPrimaryDisplayManager:displayManager/forceListViewManagerGrid/forceInlineEditGrid:grid/uiVirtualDataTable:grid/forceInlineEditCell/auraHtml' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/navexSplitViewWrapper:splitViewWrapper/lafPageHost:pageHost/oneConsoleObjectHome/auraIf/forceListViewManager:listViewManager/forceListViewManagerPrimaryDisplayManager:displayManager/forceListViewManagerGrid/forceInlineEditGrid:grid/uiVirtualDataTable:grid/forceInlineEditCell/auraHtml' type='' tag='SPAN' class='slds-grid slds-grid--align-spread forceInlineEditCell' aaname='' check:innerText='TempAccount' /&gt;" Guid="39960ace-13ce-482a-8b9c-bc849491fd56" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Opportunities" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fbae9427-355a-49f5-b17a-42060e8efcae" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://self-e9-dev-ed.develop.lightning.force.com/lightning/r/Account/001dL000004EnzSQAS/view" CVScreenId="7ac4c2bc-b2c2-44e3-8ffe-2ad59b28c29f" CvTextArea="93, 637, 107, 19" CvTextArgument="Opportunities" CvType="Text" DesignTimeRectangle="94, 635, 105, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/lafSinglePaneWindowManager:contentManager/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Opportunities' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/lafSinglePaneWindowManager:contentManager/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Opportunities' tag='SPAN' type='' class='slds-truncate slds-m-right--xx-small' check:innerText='Opportunities' /&gt;" Guid="021a5f87-4ac7-4a67-824a-6ea306a5f585" InformativeScreenshot="f09ce17b3ef4689291dbc117810e8018.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Temp2 | Account | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="7ac4c2bc-b2c2-44e3-8ffe-2ad59b28c29f" CvElementArea="55, 630, 29, 29" CvType="Icon" DesignTimeRectangle="58, 633, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/lafSinglePaneWindowManager:contentManager/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Opportunities' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/lafSinglePaneWindowManager:contentManager/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Opportunities' tag='IMG' type='' class='' /&gt;" Guid="4e52cecf-25bd-48c1-b70b-d82b642e1ac6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIJSURBVEhLxZZBTxNRFIX5Q8IGF8AGEgisWKgsKSZdQLTBwMKElrAioBLXWNho1b9AjWBgR6CtK8BiYgok7NVOU4Uyh3v6ZsoMfZl5gTK85Ete7px7Tt/0zrRt5XIZUXK/gZW9HM6XngHxTmD0we0QD3rR05vRCOSFlgRdRzy9oY3A+sl0DS2A3k2Bd3I6F/FuDtQJdcQ6gIkeBfc6jYabB86OAN+3gMIm7NQTvUZDeGD8IfD2OZB85D/Jp9fA/39CVfavrurUUMse9rp1h/DAz28A6w9w/ANI9F7VXw4DJz+FQ7V364k+0RZVDz+UW3cIDbTXPgC1Wt3Anuz3X//yEchm/LUXA7Ctv6pn7b3/mhAaiOkhYDsLFPPA1GCjbtO4dACU9ushDT01xYLqYa9bdwgPJPNPgdNfwO5XIJ0EVueA/Dfg/EzBPWsrs0BuXWnZo/EyC+QUHsl3aF8AVUuoABeydxf3rPGabStt8rHWyyyQt+lgx3E3WNR6br8Xs8DxLnXbTFd+Q/VovMwCx+TZ4kRav4GKTGAQ1HBy2aPxMgsk490yjfJYcCIDEQ21Og/BPJBDkE6paQyCGr5pdB6CeWBmUU1i2KIms6D3EMwD+Vp7J88g35tBLM/4X4HXMA8ksXY1DEFQo+t1aA6M+gc48r8Ykf+JckPrJ21FsHjQyxtGfIFREHFgGZfvF3Iivj9ilQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Item Value" sap:VirtualizedContainerService.HintSize="354,204" sap2010:WorkflowViewState.IdRef="GetOCRText_2">
+                    <ui:GetOCRText.OCREngine>
+                      <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                        <ActivityFunc.Argument>
+                          <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                        </ActivityFunc.Argument>
+                        <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" NoopExecution="False" />
+                      </ActivityFunc>
+                    </ui:GetOCRText.OCREngine>
+                    <ui:GetOCRText.Target>
+                      <ui:Target Element="{x:Null}" Id="9736c30c-5d9b-497e-b744-748bb035490f" InformativeScreenshot="24a9ad7e5042413aef121869d40349d9" Selector="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexStandardManager/lafSinglePaneWindowManager:contentManager/lafPageHost/forceRelatedListDesktop/auraIf/lstRelatedListDesktop:rlDesktop-LWC' tag='LST-RELATED-LIST-DESKTOP' /&gt;&lt;webctrl tag='LST-LIST-VIEW-MANAGER-HEADER' /&gt;">
+                        <ui:Target.ClippingRegion>
+                          <ui:Region Rectangle="11, 65, 48, 22" />
+                        </ui:Target.ClippingRegion>
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetOCRText.Target>
+                    <ui:GetOCRText.Text>
+                      <OutArgument x:TypeArguments="x:String">[AccountProduct]</OutArgument>
+                    </ui:GetOCRText.Text>
+                  </ui:GetOCRText>
+                  <ui:Matches BuilderPattern="\d" DisplayName="Find Matching Patterns" FirstMatch="[OppValue]" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[AccountProduct]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\d" RegexOption="IgnoreCase, Compiled" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,110" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[OppValue]" />
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZZBSBRRGMdHYolFJCJEJEQkJERCPISHCAlP0qGT5w7RwUNIhESEiAfxGJ46ONIpwmOIiHiQiAiRiOgUb6JTePLQIUQ6TL//25ndt85jXGmc7eDht2/3zbfv+79vvu+9L4jjuKOdnAv4fwUEq+ZCsBp1wmW4BFXN+Wz/hYwAHMkxDs0I431YgHl+TzHe0LNmu6gfrkEfNl1BGJ1KZJOA2q7NAIs9hm8QNzB/GL/CDAzCTZiFDfgMb+ERjEKnu24exwREPfASHMcZDhDzjvHLsfmUXbgHen1d0JugaGWiUxfAw4ssTJjNId99C58GCXwA0/CCNcFG7jawyUYuuQKUbOvgW7AoDCzCdbAiXAEKP+H1/rFoXkG/T8DvxKAMnkHFFXAFlM0+4+IJ7evotQKUFPxQaX2oG5TD3USADf8y/EoelMWTgA8dPiqXI+dBWcxIAPUffXImy2RcAqokRDt2/wO/3Qgw3HJeg7PmKVTSV/AzmSwJ84axzxYAXyqgCvAYFo35zrgEw+m1nZbhMHysGRVIaHS3vMbxCuNzmASVfPNlpAm4hSHGBd0Hob3YuP2MDjj1GDpp865jexqqs5kAdUJSvAd+Bw32YQt2QD3Ce5gDdVRV15mPuoD6hKIRqv+jRGp3+kn9gRJqDIZATvU6vbv1kRHgwiLqZLSbbJXUzo5NGIeK7/+tkC+ATCWR1KjcAXU126BkXYOHoPd7YpjzyBWQghOVqsJ6FVF0vzaT1fO1FOY8WhJwlpwLaLOAuOMveA1Of+TuOKQAAAAASUVORK5CYII=" InformativeScreenshot="dbca69d814a0f59db0682db7945e940f.jpg" Selector="&lt;html app='msedge.exe' title='Home | Salesforce' /&gt;" Title="Home | Salesforce and 3 more pages - Personal - Microsoft​ Edge" Url="https://self-e9-dev-ed.develop.lightning.force.com/lightning/page/home" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence sap:VirtualizedContainerService.HintSize="416,543" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Error Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Failed to capture the object &quot; + exception.Message.ToString + &quot;at source &quot; + exception.Source]" />
+                <uix:NTakeScreenshot sap2010:Annotation.AnnotationText="Takes the screenshot of the entire screen." DisplayName="Take Screenshot" FileName="Error_Screenshot\screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="354,285" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutImage="[Screenshot]" Version="V3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTakeScreenshot>
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <TryCatch DisplayName="Try Catch Create New Opportunity For New User" sap:VirtualizedContainerService.HintSize="488,1388" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+        <TryCatch.Try>
+          <If Condition="[OppValue = &quot;0&quot;]" DisplayName="If Opportunity Not Created For New User" sap:VirtualizedContainerService.HintSize="450,1137" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence DisplayName="CreateOpportunityForProduct" sap:VirtualizedContainerService.HintSize="416,701" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="OpportunityName" />
+                  <Variable x:TypeArguments="s:DateTime" Name="ClosingDate" />
+                  <Variable x:TypeArguments="x:Int32" Name="Amount" />
+                  <Variable x:TypeArguments="x:String" Name="AccountID" />
+                  <Variable x:TypeArguments="x:String" Name="Stage" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Comment sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="Comment_5" Text="For multiple accounts, we can use an excel sheet with data to process the opportunity activity fields after reviewing the product and adding the data into the excel sheet to create an opportunity for the required account ID." />
+                <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="This is a sample opportunity activity assuming we have only one account." Configuration="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" ConnectionId="84575e57-3183-428a-a4a5-0c7266a122c9" DisplayName="Create Opportunity" sap:VirtualizedContainerService.HintSize="354,452" sap2010:WorkflowViewState.IdRef="ConnectorActivity_4" UiPathActivityTypeId="0f4a3582-16d7-3c81-ab27-678e4e573ae3">
+                  <isactr:ConnectorActivity.FieldObjects>
+                    <isactr:FieldObject Name="Name" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">[OpportunityName]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="StageName" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">[Stage]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="CloseDate" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="s:DateTimeOffset">[ClosingDate]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Amount" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:Single">[Amount]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Type" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="AccountId" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">[AccntID.Name.ToString + "-" + AccntID.Id.ToString]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="CampaignId" Type="FieldArgument" />
+                    <isactr:FieldObject Name="ContactId" Type="FieldArgument" />
+                    <isactr:FieldObject Name="Description" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="NextStep" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Probability" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:Single" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="out_Id" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="x:String" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="Jit_curated_opportunity" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="uiascb2:curated_opportunity_Create" />
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                  </isactr:ConnectorActivity.FieldObjects>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </isactr:ConnectorActivity>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Comment sap:VirtualizedContainerService.HintSize="354,213" sap2010:WorkflowViewState.IdRef="Comment_6" Text="Create a new opportunity for the user account if required or filter the opportunity that you might want to view and click on products to review the product.&#xA;&#xA;If no product is listed, then add a new product in the products page from products pane and you can review or edit the product." />
+              </Sequence>
+            </If.Else>
+          </If>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Failed to create a new opportunity &quot; + exception.Message + &quot; at source &quot; + exception.Source]" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </Sequence>
+  </Sequence>
+</Activity>

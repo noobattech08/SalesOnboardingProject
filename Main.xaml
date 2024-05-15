@@ -1,0 +1,345 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Trigger.Bundle;assembly=C7266A122C9_curated_.YMZjK1LSEsK1qnoca24UUkC1" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C30FC341266_send_message_to_channel_v2_Create.Bundle;assembly=C30FC341266_send_mes.ulHcK3ZO7VC1LS3sv1oI7I53" xmlns:uiascb2="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Retrieve.Bundle;assembly=C7266A122C9_curated_.SYBnZ1MKS1I1Ql3M22zoc7z2" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1117,2015</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.AmazonWebServices.Models</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities.IAM.User</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>UiPath.Mail.Outlook.Enums</x:String>
+      <x:String>UiPath.Mail.Activities.Triggers</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Mail.Activities.Outlook</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Salesforce.ConnectionService</x:String>
+      <x:String>UiPath.Salesforce.Models</x:String>
+      <x:String>UiPath.Salesforce.Telemetry</x:String>
+      <x:String>UiPath.Salesforce.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Trigger.Bundle</x:String>
+      <x:String>DocumentFormat.OpenXml.Office.CustomUI</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Retrieve.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C7266A122C9_curated_account_Retrieve.Bundle</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Salesforce</AssemblyReference>
+      <AssemblyReference>UiPath.Salesforce.Activities</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.YMZjK1LSEsK1qnoca24UUkC1</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>C30FC341266_send_mes.ulHcK3ZO7VC1LS3sv1oI7I53</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.SYBnZ1MKS1I1Ql3M22zoc7z2</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.hYSMg4P6sVR12mBUo29cEXS3</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>C7266A122C9_curated_.bAUdD2df5uQ1SK4el1PSzGc2</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence " sap:VirtualizedContainerService.HintSize="512,1950" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="uiascb:curated_account_Trigger" Name="New_UserAccountData" />
+      <Variable x:TypeArguments="x:String" Name="AccountID" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <isactr:ConnectorTriggerActivity sap2010:Annotation.AnnotationText="This salesforce developer account is connected to my personal account for testing purposes." Configuration="H4sIAAAAAAAACrVVW08aQRT+K5N9XjeFVLEkPuCKKRWVCGjaxpDZ2cMyMsysc6FSwn/vmd0loIg1aQ0PwLnt933nssvgnAsLuv2UazCGKxk0gyAMLqlMqVV68br7nINITaykpVyCDprLoD0HaUt70Py5DK6o5XMYLHLAFGM1lxkmXuvUh9fCoGNip6mFdJMYNK12EGLqzCcVX2FwBoZpntvy4d5I1JjYCRDKmHLS+hhuckEXVWKrtBNZFniJAQvyDGstV6vwf+CsHnflZgnmvAQ8QKDOgD5IYYxapQSeUFBJBeEpFuRjDvrdhNaP+GhKRe4OEzS+QBqRdhaRnlYmB2ZDEjtj1Qx0SHpUW5yMiHj+cyocGDJWGpO5IVQDYUUo/00TAXsJ2xLHR9PtTZTc5VtYK83/1qF1hY9GegeJ4XYXa2UnCQglM6xLrHoT8KbQG5DvEZLM3Wat0XDt7LbFk9pu2b5W7iDePHnIe9ROoo60kCF7dPdBzzmDqMVQL245mKh/18ZlKX7GjfrRUatWr8dfRqzUa1TRHA00zzIcu1MnUwHRHjcO6is1ou+XPx4uat1+21zUHqVitP55OJzGtZDcgvbH76QWffIfP+jCOg0nEpzVVOC8u0RwdgGLgZqCPJFOCGR4A484+DZojqkw2MVCti5WrkQoxfQzIGMq59Ss290x3/jzAeiYS7y1N2ByJQ1sucrBerY2nbO9G1W69nSivzAWZlG/GIWQVH97ms9RoChWGro82ahx/F41GgzY8WHaSIA2Gl+O4d+U2afD/SoMYjVL/JV9/bXVkcZSyQCPE6qCAVh1GVR0MKRoL8bhi03iPVMaGaDZ8RwH9MBQAQZvGIMDM04ZxlXzuajkq5a3GjKPPXnAMjuLUGz3dQ7lsHtXHF8Prwaj+KbdGrR9h4qQS5UWt0UJ4VfT06NsAiiTmrr8tjiqfk/X9lOtfuGbpoNNq+w9yqY0g22Gh88ZbrvqUeNoP+oulZnDYmgEif+/UnOqgU4RWjxBn8dSNHP1BwznlQFVCAAA" ConnectionId="84575e57-3183-428a-a4a5-0c7266a122c9" DisplayName="New Account Created" sap:VirtualizedContainerService.HintSize="450,246" sap2010:WorkflowViewState.IdRef="ConnectorTriggerActivity_3" UiPathActivityTypeId="c6661b8c-b398-336f-be0f-4ec6d2ef9a2d" UiPathAdditionalEventData="[UiPathAdditionalEventData]" UiPathEvent="[UiPathEvent]" UiPathEventConnector="[UiPathEventConnector]" UiPathEventObjectId="[UiPathEventObjectId]" UiPathEventObjectType="[UiPathEventObjectType]">
+      <isactr:ConnectorTriggerActivity.FieldObjects>
+        <isactr:FieldObject Name="Account" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:curated_account_Trigger">[New_UserAccountData]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_Account_20_ID" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[AccountID]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorTriggerActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorTriggerActivity>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="450,374" sap2010:WorkflowViewState.IdRef="Comment_4" Text="The above trigger is based on the assumption that the application on which users register themselves is integrated with Salesforce account creation.&#xA;&#xA;The trigger also only retrieves the data when there is a new account that gets created on salesforce.&#xD;&#xA;&#xD;&#xA;Incase of an event driven trigger for an external application, we would consider that when a new account is added to the database after user registration in the expected web application, the below workflow would then be replicated just as the current one right after the trigger has been defined.&#xD;&#xA;&#xD;&#xA;" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[New_UserAccountData.Name.ToString]" />
+    <TryCatch DisplayName="Try Catch Outlook And Slack Notification" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="The below outlook and slack is connected to my personal account to test the automation." DisplayName="Outlook_Slack_Notification" sap:VirtualizedContainerService.HintSize="416,772" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi team new user &quot; + New_UserAccountData.Name.ToString + &quot; has been created on salesforce!&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="354,184" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="New User has been Created" To="iammad7014@gmail.com">
+            <ui:SendOutlookMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </ui:SendOutlookMail.Files>
+          </ui:SendOutlookMail>
+          <isactr:ConnectorActivity Configuration="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" ConnectionId="0c8afaae-57e6-453e-8420-ec30fc341266" DisplayName="Send Message To Sales Team Channel" sap:VirtualizedContainerService.HintSize="354,461" sap2010:WorkflowViewState.IdRef="ConnectorActivity_10" UiPathActivityTypeId="37a305b2-89b1-315d-b73f-1778839a6c47">
+            <isactr:ConnectorActivity.FieldObjects>
+              <isactr:FieldObject Name="channel" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">C073B1QLT9U</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="messageToSend" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">["Hi Team new user " + New_UserAccountData.Name.ToString + " has been created on salesforce!"]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="send_as" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">user</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="fields" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="buttons" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="image" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="parse" Type="FieldArgument" />
+              <isactr:FieldObject Name="link_names" Type="FieldArgument" />
+              <isactr:FieldObject Name="unfurl_links" Type="FieldArgument" />
+              <isactr:FieldObject Name="username" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="icon_emoji" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Jit_send_message_to_channel_v2" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="uiascb1:send_message_to_channel_v2_Create" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_ts" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="x:String" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+            </isactr:ConnectorActivity.FieldObjects>
+          </isactr:ConnectorActivity>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,211" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[&quot;Failed to send email or slack message: &quot; + exception.Message.ToString + &quot;exception source&quot; + exception.Source.ToString]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <Sequence DisplayName="Update User Account Workflow" sap:VirtualizedContainerService.HintSize="450,363" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="TempAccount" Name="AccountName" />
+        <Variable x:TypeArguments="x:String" Default="Prospecting" Name="AccountType" />
+        <Variable x:TypeArguments="uiascb2:curated_account_Retrieve" Name="Get_Acccount" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Comment_6" Text="The below workflow is used to update the user account that has been created newly." />
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AccountInformationUpdate - Invoke Workflow File (AccountInformationUpdate.xaml)" sap:VirtualizedContainerService.HintSize="388,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AccountInformationUpdate.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="AccntName">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="AccountName" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="AccntType">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="AccountType" />
+          </InArgument>
+          <InArgument x:TypeArguments="uiascb:curated_account_Trigger" x:Key="AccntID">
+            <VisualBasicValue x:TypeArguments="uiascb:curated_account_Trigger" ExpressionText="New_UserAccountData" />
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="450,126" sap2010:WorkflowViewState.IdRef="Comment_5" Text="The Below outlook mail after data processing must contain client email ID, for testing purposes personal Email ID has been used." />
+    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Hi user, your account has been successfully created! You may now login to the website(URL)" DisplayName="Send Outlook Mail Message To Client" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="New Account Created" To="iammad7014@gmail.com">
+      <ui:SendOutlookMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+      </ui:SendOutlookMail.Files>
+    </ui:SendOutlookMail>
+  </Sequence>
+</Activity>
